@@ -7,14 +7,14 @@ import {Faculty} from './Faculty'
 @Entity("Faculty_indicators$" ,{schema:"dbo" } )
 export  class FacultyIndicators {
 
-@Column("float",{ name:"Розрахунковий контингент",nullable:true,precision:53 })
-:number | null;
+// @Column("float",{ name:"Розрахунковий контингент",nullable:true,precision:53 })
+// :number | null;
 
-@Column("float",{ name:"Приведений контингент",nullable:true,precision:53 })
-:number | null;
+// @Column("float",{ name:"Приведений контингент",nullable:true,precision:53 })
+// :number | null;
 
-@Column("float",{ name:"Приведений розрахунковий контингент по спеціальному фонду",nullable:true,precision:53 })
-:number | null;
+// @Column("float",{ name:"Приведений розрахунковий контингент по спеціальному фонду",nullable:true,precision:53 })
+// :number | null;
 
 @PrimaryGeneratedColumn({ type:"int", name:"id" })
 id:number;

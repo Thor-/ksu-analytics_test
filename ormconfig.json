@@ -2,13 +2,13 @@
   {
     "name": "default",
     "type": "mssql",
-    "host": "localhost",
+    "host": "localhost\\SQLEXPRESS",
     "port": 1433,
     "username": "OESUser",
     "password": "OESUser",
     "database": "KSU_formula",
     "schema": "dbo",
     "synchronize": false,
-    "entities": ["entities/*.js"]
+    "entities": ["dist/entities/*{.ts,.js}"]
   }
 ]

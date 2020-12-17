@@ -2,16 +2,21 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { FacultiesController } from './controllers/faculties.controller';
 import { DatabaseModule } from './database/database.module';
-import { FacultyController } from './controllers/faculty.controller';
-import { FacultiesController } from './controllers/faculties/faculties.controller';
+import { FacultyService } from './services/facult.service';
 
 @Module({
   imports: [
-    DatabaseModule,
-    TypeOrmModule.forRoot()
+    DatabaseModule    
   ],
-  controllers: [AppController, FacultyController, FacultiesController],
-  providers: [AppService],
+  controllers: [
+    AppController,
+    FacultiesController,
+  ],
+  providers: [
+    AppService,
+    FacultyService,
+  ],
 })
-export class AppModule {}
+export class AppModule { }
