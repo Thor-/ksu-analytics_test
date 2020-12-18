@@ -1,4 +1,4 @@
-import { Column, Entity, Index, OneToMany } from "typeorm";
+import { Column, Entity, Index, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { FacultyFinancing } from "./FacultyFinancing";
 import { FacultyIndicators } from "./FacultyIndicators";
 import { FacultyIndices } from "./FacultyIndices";
@@ -8,7 +8,7 @@ import { SpecialtySources } from "./SpecialtySources";
 @Index("PK__Faculty___3213E83F6DC1FB02", ["id"], { unique: true })
 @Entity("Faculty$", { schema: "dbo" })
 export class Faculty {
-  @Column("int", { primary: true, name: "id", generated: 'increment' })
+  @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
 
   @Column("nvarchar", { name: "Faculty", nullable: true, length: 255 })

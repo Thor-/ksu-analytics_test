@@ -1,4 +1,5 @@
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, UseInterceptors } from '@nestjs/common';
+import { FacultyIndicatorDto } from '../dto/faculty-indicator.dto';
 import { FacultyDto } from '../dto/faculty.dto';
 import { DtoTransformInterceptor } from '../interceptors/dto-transform.interceptor';
 import { FacultyModel } from '../models/faculty.model';
@@ -35,5 +36,12 @@ export class FacultiesController {
   @Delete(':id(\\d+)')
   delete(@Param('id', ParseIntPipe) id: number) {
     return this.facultyService.delete(id);
+  }
+
+  @Get(':id(\\d+)/indicators')
+  @UseInterceptors(new DtoTransformInterceptor(FacultyIndicatorDto))
+  async getIndicators(@Param('id', ParseIntPipe) id: number) {
+    const data = await  this.facultyService.getIndicators(id);
+    return data;
   }
 }
