@@ -1,13 +1,11 @@
 import { Module } from '@nestjs/common';
-import { DatabaseService } from './database.service';
 import { ConfigModule } from '@nestjs/config';
-import { UnitOfWork } from './unit-of-work';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { DatabaseService } from './database.service';
 
 @Module({
   providers: [
     DatabaseService,
-    UnitOfWork,
   ],
   imports: [
     ConfigModule.forRoot({
@@ -15,8 +13,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     }),
     TypeOrmModule.forRoot()
   ],
-  exports: [
-    UnitOfWork
-  ]
+  exports: []
 })
-export class DatabaseModule {}
+export class DatabaseModule { }

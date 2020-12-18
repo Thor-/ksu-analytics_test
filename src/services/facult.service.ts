@@ -1,15 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { UnitOfWork } from '../database/unit-of-work';
+import { Connection } from 'typeorm';
 import { Faculty } from '../entities/Faculty';
+import { FacultyModel } from '../models/faculty.model';
+import { GenericCrudService } from './generic-crud.service';
 
 @Injectable()
-export class FacultyService {
-  constructor(private unitOfWork: UnitOfWork) {
-
-  }
-
-  getAll(): Promise<Array<Faculty>> {
-    const repository = this.unitOfWork.getRepository(Faculty);
-    return repository.find();
+export class FacultyService extends GenericCrudService<Faculty, FacultyModel> {
+  constructor(connection: Connection) {
+    super(connection, Faculty);
   }
 }

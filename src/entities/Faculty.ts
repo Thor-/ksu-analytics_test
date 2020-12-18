@@ -8,7 +8,7 @@ import { SpecialtySources } from "./SpecialtySources";
 @Index("PK__Faculty___3213E83F6DC1FB02", ["id"], { unique: true })
 @Entity("Faculty$", { schema: "dbo" })
 export class Faculty {
-  @Column("int", { primary: true, name: "id" })
+  @Column("int", { primary: true, name: "id", generated: 'increment' })
   id: number;
 
   @Column("nvarchar", { name: "Faculty", nullable: true, length: 255 })
