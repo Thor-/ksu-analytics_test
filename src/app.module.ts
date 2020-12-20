@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { EducationLevelsController } from './controllers/education-levels.controller';
 import { FacultiesController } from './controllers/faculties.controller';
+import { PaymentFormsController } from './controllers/payment-forms.controller';
 import { SpecialitiesController } from './controllers/specialities.controller';
 import { StudentsByAreasController } from './controllers/students-by-areas.controller';
 import { StudyingFormsController } from './controllers/studying-forms.controller';
@@ -11,6 +12,7 @@ import { AmountOfStudentsByAreaService } from './services/amount-of-students-by-
 import { FacultyService } from './services/facult.service';
 import { FormOfStudyingService } from './services/form-of-studying.service';
 import { LevelOfEducationService } from './services/level-of-education.service';
+import { PaymentFormService } from './services/payment-form.service';
 import { SpecialityService } from './services/speciality.service';
 
 @Module({
@@ -24,6 +26,7 @@ import { SpecialityService } from './services/speciality.service';
     StudentsByAreasController,
     StudyingFormsController,
     EducationLevelsController,
+    PaymentFormsController,
   ],
   providers: [
     AppService,
@@ -32,6 +35,7 @@ import { SpecialityService } from './services/speciality.service';
     AmountOfStudentsByAreaService,
     FormOfStudyingService,
     LevelOfEducationService,
+    PaymentFormService,
   ],
 })
 export class AppModule { }
