@@ -14,7 +14,7 @@ import { SpecialtySources } from "./SpecialtySources";
 
 @Index("PK__Date$__3213E83F4EAC6DB4", ["id"], { unique: true })
 @Entity("Date$", { schema: "dbo" })
-export class Date {
+export class DateEntity {
   @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
 

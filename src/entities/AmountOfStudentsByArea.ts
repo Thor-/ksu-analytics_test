@@ -6,7 +6,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Date } from "./Date";
+import { DateEntity } from "./Date";
 import { Specialties } from "./Specialties";
 import { PaymentForm } from "./PaymentForm";
 import { FormOfStudying } from "./FormOfStudying";
@@ -21,9 +21,9 @@ export class AmountOfStudentsByArea {
   @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
 
-  @ManyToOne(() => Date, (date) => date.amountOfStudentsByAreas)
+  @ManyToOne(() => DateEntity, (date) => date.amountOfStudentsByAreas)
   @JoinColumn([{ name: "Date", referencedColumnName: "id" }])
-  date: Date;
+  date: DateEntity;
 
   @ManyToOne(
     () => Specialties,

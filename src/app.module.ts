@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { DatesController } from './controllers/dates.controller';
 import { EducationLevelsController } from './controllers/education-levels.controller';
 import { FacultiesController } from './controllers/faculties.controller';
 import { PaymentFormsController } from './controllers/payment-forms.controller';
@@ -9,6 +10,7 @@ import { StudentsByAreasController } from './controllers/students-by-areas.contr
 import { StudyingFormsController } from './controllers/studying-forms.controller';
 import { DatabaseModule } from './database/database.module';
 import { AmountOfStudentsByAreaService } from './services/amount-of-students-by-area.service';
+import { DateService } from './services/date.service';
 import { FacultyService } from './services/facult.service';
 import { FormOfStudyingService } from './services/form-of-studying.service';
 import { LevelOfEducationService } from './services/level-of-education.service';
@@ -27,6 +29,7 @@ import { SpecialityService } from './services/speciality.service';
     StudyingFormsController,
     EducationLevelsController,
     PaymentFormsController,
+    DatesController,
   ],
   providers: [
     AppService,
@@ -36,6 +39,7 @@ import { SpecialityService } from './services/speciality.service';
     FormOfStudyingService,
     LevelOfEducationService,
     PaymentFormService,
+    DateService,
   ],
 })
 export class AppModule { }

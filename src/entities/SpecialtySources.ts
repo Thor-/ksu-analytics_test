@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm";
 import { Specialties } from "./Specialties";
-import { Date } from "./Date";
+import { DateEntity } from "./Date";
 import { Faculty } from "./Faculty";
 
 @Index("PK__Specialt__3213E83FEE28D03D", ["id"], { unique: true })
@@ -19,13 +19,13 @@ export class SpecialtySources {
   @JoinColumn([{ name: "Specialty", referencedColumnName: "id" }])
   specialty: Specialties;
 
-  @ManyToOne(() => Date, (date) => date.specialtySources)
+  @ManyToOne(() => DateEntity, (date) => date.specialtySources)
   @JoinColumn([{ name: "Date", referencedColumnName: "id" }])
-  date: Date;
+  date: DateEntity;
 
-  @ManyToOne(() => Date, (date) => date.specialtySources2)
+  @ManyToOne(() => DateEntity, (date) => date.specialtySources2)
   @JoinColumn([{ name: "Date", referencedColumnName: "id" }])
-  date2: Date;
+  date2: DateEntity;
 
   @ManyToOne(() => Faculty, (faculty) => faculty.specialtySources)
   @JoinColumn([{ name: "Faculty", referencedColumnName: "id" }])

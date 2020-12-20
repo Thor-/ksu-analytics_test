@@ -1,6 +1,6 @@
 import { Column, Entity, Index, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Faculty } from './Faculty'
-import { Date } from './Date'
+import { DateEntity } from './Date'
 
 
 @Index("PK__Faculty___3213E83F6A25CC32", ["id",], { unique: true })
@@ -34,10 +34,10 @@ export class FacultyFinancing {
 
   faculty: Faculty;
 
-  @ManyToOne(() => Date, date => date.facultyFinancings)
+  @ManyToOne(() => DateEntity, date => date.facultyFinancings)
   @JoinColumn([{ name: "Date", referencedColumnName: "id" },
   ])
 
-  date: Date;
+  date: DateEntity;
 
 }
