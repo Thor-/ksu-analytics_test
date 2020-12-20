@@ -4,8 +4,8 @@ import { DtoTransformInterceptor } from '../interceptors/dto-transform.intercept
 import { AmountOfStudentsByAreaModel } from '../models/amount-of-students-by-area.model';
 import { AmountOfStudentsByAreaService } from '../services/amount-of-students-by-area.service';
 
-@Controller('amount-of-students-by-areas')
-export class AmountOfStudentsByAreasController {
+@Controller('students-by-areas')
+export class StudentsByAreasController {
   constructor(private service: AmountOfStudentsByAreaService) {
 
   }
