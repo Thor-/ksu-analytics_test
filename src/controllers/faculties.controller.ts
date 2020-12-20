@@ -1,4 +1,5 @@
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, UseInterceptors } from '@nestjs/common';
+import { ApiExtraModels, ApiQuery } from '@nestjs/swagger';
 import { FacultyIndicatorDto } from '../dto/faculty-indicator.dto';
 import { FacultyDto } from '../dto/faculty.dto';
 import { DtoTransformInterceptor } from '../interceptors/dto-transform.interceptor';
