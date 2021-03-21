@@ -10,6 +10,7 @@ import { FacultyFinancing } from "./FacultyFinancing";
 import { FacultyIndicators } from "./FacultyIndicators";
 import { FacultyIndices } from "./FacultyIndices";
 import { FacultySources } from "./FacultySources";
+import { SpecialtyIndices } from "./SpecialtyIndices";
 import { SpecialtySources } from "./SpecialtySources";
 
 @Index("PK__Date$__3213E83F4EAC6DB4", ["id"], { unique: true })
@@ -56,4 +57,6 @@ export class DateEntity {
     (specialtySources) => specialtySources.date2
   )
   specialtySources2: SpecialtySources[];
+
+  specialityIndeces: SpecialtyIndices[];
 }

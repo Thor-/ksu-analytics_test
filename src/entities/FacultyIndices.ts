@@ -7,17 +7,17 @@ import { DateEntity } from './Date'
 @Entity("Faculty_indices$", { schema: "dbo" })
 export class FacultyIndices {
 
-  // @Column("float",{ name:"Показник_масштабу_діяльності_(Мі)",nullable:true,precision:53 })
-  // :number | null;
+  @Column("float", { name: "ActivityScaleIndicator", nullable: true, precision: 53 })
+  activityScaleIndicator: number | null;
 
-  // @Column("float",{ name:"Показник_наукової_діяльності_(Ні)",nullable:true,precision:53 })
-  // :number | null;
+  @Column("float", { name: "IndexScientificActivity", nullable: true, precision: 53 })
+  indexScientificActivity: number | null;
 
-  // @Column("float",{ name:"Показник_міжнародного_визнання_(МВі)",nullable:true,precision:53 })
-  // :number | null;
+  @Column("float", { name: "InternationalRecognitionIndicator", nullable: true, precision: 53 })
+  internationalRecognitionIndicator: number | null;
 
-  // @Column("float",{ name:"Показник_працевлаштування_випускників_(ПВі)",nullable:true,precision:53 })
-  // :number | null;
+  @Column("float", { name: "GraduateEmploymentIndicator", nullable: true, precision: 53 })
+  graduateEmploymentIndicator: number | null;
 
   @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;

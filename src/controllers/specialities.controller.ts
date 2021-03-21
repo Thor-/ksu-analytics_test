@@ -1,4 +1,5 @@
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, UseInterceptors } from '@nestjs/common';
+import { SpecialityIndexDto } from '../dto/speciality-index.dto';
 import { SpecialityDto } from '../dto/speciality.dto';
 import { DtoTransformInterceptor } from '../interceptors/dto-transform.interceptor';
 import { SpecialityModel } from '../models/specialty.model';
@@ -35,5 +36,12 @@ export class SpecialitiesController {
   @Delete(':id(\\d+)')
   delete(@Param('id', ParseIntPipe) id: number) {
     return this.specialityService.delete(id);
+  }
+
+  @Get(':id(\\d+)/indexes')
+  @UseInterceptors(new DtoTransformInterceptor(SpecialityIndexDto))
+  async getIndexes(@Param('id', ParseIntPipe) id: number) {
+    const data = await this.specialityService.getIndexes(id);
+    return data;
   }
 }

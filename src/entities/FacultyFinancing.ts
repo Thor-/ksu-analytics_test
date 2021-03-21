@@ -7,23 +7,23 @@ import { DateEntity } from './Date'
 @Entity("Faculty_financing$", { schema: "dbo" })
 export class FacultyFinancing {
 
-  // @Column("float",{ name:"Обсяг_фінансування_галузі_знань",nullable:true,precision:53 })
-  // :number | null;
+  @Column("float", { name: "FundingVolume", nullable: true, precision: 53 })
+  fundingVolume: number | null;
 
-  // @Column("float",{ name:"Стабільне_фінансування_факультетів_грн#",nullable:true,precision:53 })
-  // :number | null;
+  @Column("float", { name: "StableFunding", nullable: true, precision: 53 })
+  stableFunding: number | null;
 
-  // @Column("float",{ name:"Додаткове_фінансування_факультетів_грн#",nullable:true,precision:53 })
-  // :number | null;
+  @Column("float", { name: "AdditionalFunding", nullable: true, precision: 53 })
+  additionalFunding: number | null;
 
-  // @Column("float",{ name:"Фінансування_факультетів_(всього_грн#)",nullable:true,precision:53 })
-  // :number | null;
+  @Column("float", { name: "FacultiesFinancing", nullable: true, precision: 53 })
+  facultiesFinancing: number | null;
 
-  // @Column("float",{ name:"Фінансування_факультетів_по_спеціальному_фонду",nullable:true,precision:53 })
-  // :number | null;
+  @Column("float", { name: "SpecialFundFinancing", nullable: true, precision: 53 })
+  specialFundFinancing: number | null;
 
-  // @Column("float",{ name:"Фінансування_факультетів_загальний_спеціальний_фонди",nullable:true,precision:53 })
-  // :number | null;
+  @Column("float", { name: "GeneralFundFinancing", nullable: true, precision: 53 })
+  generalFundFinancing: number | null;
 
   @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;

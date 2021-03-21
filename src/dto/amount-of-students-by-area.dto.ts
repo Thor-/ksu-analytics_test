@@ -1,5 +1,5 @@
 import { Expose, Transform } from 'class-transformer';
-import * as moment from 'moment';
+import { dateEntityTransformer } from './transformers/date-entity.transformer';
 
 export class AmountOfStudentsByAreaModelDto {
   @Expose()
@@ -7,7 +7,7 @@ export class AmountOfStudentsByAreaModelDto {
   @Expose()
   amount: number | null;  
   @Expose()
-  @Transform(value => value?.date ? moment(value?.date).format('YYYY-MM-DD') : null)
+  @Transform(dateEntityTransformer)
   date: string;
   @Expose()
   @Transform(value => value?.specialty || null)

@@ -6,6 +6,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
+import { DateEntity } from "./Date";
 import { Specialties } from "./Specialties";
 
 @Index("PK__Specialt__3213E83F202FF349", ["id"], { unique: true })
@@ -21,7 +22,8 @@ export class SpecialtyIndices {
   @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
 
-  @Column("int", { name: "Date", nullable: true })
+  @ManyToOne(() => DateEntity, (date) => date.specialityIndeces)
+  @JoinColumn([{ name: "Date", referencedColumnName: "id" }])
   date: number | null;
 
   @ManyToOne(() => Specialties, (specialties) => specialties.specialtyIndices)

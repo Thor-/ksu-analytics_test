@@ -8,6 +8,7 @@ import {
 import { Specialties } from "./Specialties";
 import { DateEntity } from "./Date";
 import { Faculty } from "./Faculty";
+import { Department } from "./Department";
 
 @Index("PK__Specialt__3213E83FEE28D03D", ["id"], { unique: true })
 @Entity("Specialty_sources$", { schema: "dbo" })
@@ -30,4 +31,8 @@ export class SpecialtySources {
   @ManyToOne(() => Faculty, (faculty) => faculty.specialtySources)
   @JoinColumn([{ name: "Faculty", referencedColumnName: "id" }])
   faculty: Faculty;
+
+  @ManyToOne(() => Department, (department) => department.specialtySources)
+  @JoinColumn([{ name: "Department", referencedColumnName: "id" }])
+  department: Department;
 }

@@ -1,4 +1,5 @@
 import { Column, Entity, Index, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Department } from "./Department";
 import { FacultyFinancing } from "./FacultyFinancing";
 import { FacultyIndicators } from "./FacultyIndicators";
 import { FacultyIndices } from "./FacultyIndices";
@@ -37,4 +38,10 @@ export class Faculty {
     (specialtySources) => specialtySources.faculty
   )
   specialtySources: SpecialtySources[];
+
+  @OneToMany(
+    () => Department,
+    (department) => department.faculty
+  )
+  departments: Department[];
 }

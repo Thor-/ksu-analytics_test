@@ -1,11 +1,11 @@
 import { Expose, Transform } from 'class-transformer';
 import { dateEntityTransformer } from './transformers/date-entity.transformer';
 
-export class DateDto {
-  @Expose()
-  id: number;
+export class FacultySourceDto {
+    @Expose()
+    id: number;
 
-  @Expose()
-  @Transform(dateEntityTransformer)
-  date: string;
+    @Expose()
+    @Transform(dateEntityTransformer)
+    date: string | null;
 }
